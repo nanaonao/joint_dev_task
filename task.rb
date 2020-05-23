@@ -110,7 +110,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  puts user_data.merge(update_data)
+  user_data.merge!(update_data)
+  puts user_data
 end
 
 def q14
@@ -125,7 +126,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
+  puts data1.key?(:age)? "OK" : "NG"
+  puts data2.key?(:age)? "OK" : "NG"
 end
 
 def q16
@@ -137,7 +139,9 @@ def q16
   ]
 
   # 以下に回答を記載
-
+  users.each do |x|
+    puts "私の名前は#{x[:name]}です。年齢は#{x[:age]}歳です。"
+  end
 end
 
 class UserQ17
