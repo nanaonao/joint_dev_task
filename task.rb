@@ -146,6 +146,19 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+    @gender = params[:gender]
+  end
+
+  def info
+    puts <<~TEXT
+    名前:#{@name}
+    年齢:#{@age}
+    性別:#{@gender}
+    TEXT
+  end
 
 end
 
@@ -153,7 +166,6 @@ def q17
   # ここは変更しないで下さい（ユーザー情報は変更していただいてOKです）
   user1 = UserQ17.new(name: "神里", age: 32, gender: "男")
   user2 = UserQ17.new(name: "あじー", age: 32, gender: "男")
-
   user1.info
   puts "-------------"
   user2.info
@@ -161,6 +173,18 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(**params)
+    @name = params[:name]
+    @age = params[:age]
+  end
+
+  def introduce
+    if @age == 32
+      return "こんにちは,#{@name}と申します。宜しくお願いいたします。"
+    else
+      return  "はいさいまいど〜,#{@name}です!!!"
+    end
+  end
 
 end
 
